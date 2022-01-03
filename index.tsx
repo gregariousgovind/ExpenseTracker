@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Expenses from './src/components/Expenses/Expenses';
+import NewExpense from './src/components/Expenses/NewExpense/NewExpense';
+
 import './index.scss';
 
 const App = () => {
@@ -25,7 +27,12 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
-  return <Expenses items={expenses} />;
+  return (
+    <div>
+      <NewExpense />
+      <Expenses items={expenses} />
+    </div>
+  );
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
